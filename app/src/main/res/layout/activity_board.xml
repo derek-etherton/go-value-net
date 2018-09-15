@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frontend.Activities.BoardActivity"
+    android:id="@+id/layout_board">
+
+    <ImageView
+        android:id="@+id/iv_board"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/desc_board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/shinkaya0"/>
+
+    <com.derk.govaluenet.frontend.Views.GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/grid"/>
+
+</RelativeLayout>
