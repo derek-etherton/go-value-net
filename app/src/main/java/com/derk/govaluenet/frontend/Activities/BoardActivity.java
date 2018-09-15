@@ -1,20 +1,17 @@
 package com.derk.govaluenet.frontend.Activities;
 
-import android.content.Context;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.derk.govaluenet.Controller.GridHandler;
 import com.derk.govaluenet.R;
-import com.derk.govaluenet.frontend.Views.GridView;
+import com.derk.govaluenet.frontend.Views.SquareGridView;
 
 public class BoardActivity extends AppCompatActivity {
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +25,21 @@ public class BoardActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Log.i("he", "he");
-
-                GridView grid = findViewById(R.id.grid);
+                SquareGridView grid = findViewById(R.id.grid);
                 GridHandler handler = grid.getGridHandler();
 
-                int x = handler.getXCoordinate(1);
-                int y = handler.getYCoordinate(1);
+                int x = handler.getGridline(count);
+                int y = handler.getGridline(count);
+
+                if (count < 19) {
+                    count++;
+                }
+                int size = handler.getStoneSize();
 
                 ImageView iv = new ImageView(getApplicationContext());
                 iv.setImageResource(R.drawable.black0);
 
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(50, 50);
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(size, size);
                 params.leftMargin = x;
                 params.topMargin = y;
 

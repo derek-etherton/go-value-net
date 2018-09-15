@@ -4,19 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".frontend.Activities.BoardActivity"
+    android:padding="15dp"
     android:id="@+id/layout_board">
-
-    <ImageView
+    <com.derk.govaluenet.frontend.Views.SquareImageView
         android:id="@+id/iv_board"
         android:scaleType="centerCrop"
         android:contentDescription="@string/desc_board"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:src="@drawable/shinkaya0"/>
-
-    <com.derk.govaluenet.frontend.Views.GridView
+    <com.derk.govaluenet.frontend.Views.SquareGridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/grid"/>
-
 </RelativeLayout>

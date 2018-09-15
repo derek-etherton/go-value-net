@@ -1,24 +1,29 @@
 package com.derk.govaluenet.Controller;
 
+// Does not support margins, if margins are needed, wrap the GridView in a FrameLayout
+
 public class GridHandler {
     private int numRows;
-    private int numCols;
     private int gridWidth;
-    private int gridHeight;
+    private int offset;
 
-
-    public GridHandler(int numRows, int numCols, int gridWidth, int gridHeight) {
-        this.numCols = numCols;
+    public GridHandler(int numRows, int gridWidth, int offset) {
         this.numRows = numRows;
         this.gridWidth = gridWidth;
-        this.gridHeight = gridHeight;
+        this.offset = offset;
     }
 
-    public int getXCoordinate(int x){
-        return gridWidth * x / numCols;
+    public int getCoordinate(int x){
+        return gridWidth * x / numRows + offset;
     }
 
-    public int getYCoordinate(int y){
-        return gridHeight * y / numRows;
+    public int getStoneSize(){
+        return gridWidth / numRows;
     }
+
+    /** Returns the gridline to the left (or above) the given point */
+    public int getGridline(int x) {
+        return gridWidth * x / numRows - gridWidth  / numRows / 2 + offset;
+    }
+
 }
