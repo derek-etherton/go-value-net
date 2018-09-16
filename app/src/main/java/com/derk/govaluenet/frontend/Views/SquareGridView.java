@@ -31,7 +31,7 @@ public class SquareGridView extends View {
     private boolean showGrid = true;
     private final Paint paint = new Paint();
     private int numRows = DEFAULT_NUMBER_OF_ROWS;
-    private int margins = 25;
+    private int margins = 50;
 
     public SquareGridView(Context context) {
         super(context);
@@ -43,16 +43,13 @@ public class SquareGridView extends View {
         init();
     }
 
-    /*
-    public GridView(Context context, AttributeSet attrs, int defStyle) {
+    public SquareGridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
-    }*/
+    }
 
     private void init() {
         paint.setColor(DEFAULT_PAINT_COLOR);
-        //gridHandler = new GridHandler(DEFAULT_NUMBER_OF_ROWS, DEFAULT_NUMBER_OF_COLUMNS,
-         //       getWidth(), getHeight());
     }
 
     public GridHandler getGridHandler() {
@@ -121,7 +118,6 @@ public class SquareGridView extends View {
     }
 
     private void drawOutline(Canvas canvas, int width){
-
         canvas.drawLine(margins, margins, width - margins,
                 margins, paint);
         canvas.drawLine(margins, width - margins, width - margins,
